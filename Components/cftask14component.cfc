@@ -12,15 +12,14 @@
 		<cfoutput>
 		   	Thankyou, your file has been uploaded to successfully to #cffile.ServerDirectory# 
 		</cfoutput>
-		<cfif not structKeyExists(application, "#filename#")>    
-			<cflock scope="application" type="exclusive" timeout="30">  
-					<cfset value=StructInsert(application, "#filename#", "#description#")>            
-			</cflock>				
+		<cfif not structKeyExists(application, "#filename#")> 
+			<cfset value=StructInsert(application, "#filename#", "#description#")>  
 		</cfif>		
+		<cfdump var=#application# abort>
 		<cfif IsImageFile("#cffile.ServerDirectory#/#filename#.#cffile.ClientFileExt#")>		
 		    <cfimage action="read" source="#cffile.ServerDirectory#/#filename#.#cffile.ClientFileExt#" name="myImage">
 		    <cfset ImageScaleToFit(myImage,20,20,"bilinear")>
-		    <cfset newImageName = #cffile.ServerDirectory# & "/" &#filename#&"_thumbnail." &#cffile.ClientFileExt#>		      	
+		    <cfset local.newImageName = #cffile.ServerDirectory# & "/" &#filename#&"_thumbnail." &#cffile.ClientFileExt#>		      	
 		    <cfimage source="#myImage#" action="write" destination="#newImageName#" overwrite="yes">
 		</cfif>
 		<cfreturn application>

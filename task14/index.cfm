@@ -11,6 +11,7 @@
 <cfif isDefined("form.SubmitTask14action")>
 	<cfinvoke component="CFTASKSCOMBINED.Components.cftask14component" method="retrieveImages" 
 	filename="#Form.txtbox1#" description="#Form.txtbox2#" fileUpload=#Form.fileUpload# returnVariable="res">	
+	<cfdump var=#res#>
 	<cfset recurse=true>
 	<cfset listInfo="name">
 	<cfset filter="*_thumbnail*">

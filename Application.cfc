@@ -3,4 +3,6 @@
 	<cfset this.applicationTimeout=createtimespan(0,1,0,0)/>
 	<cfset this.datasource="cftask"/>
 	<cfset this.sessionmanagement="yes"/>
+	<cfset cookie.VisitsCounter = "0" />
+	<cfset SESSION.HitCount ="0"/>
 </cfcomponent>

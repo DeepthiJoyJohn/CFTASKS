@@ -23,13 +23,13 @@
 			<input type="Submit" name="SubmitTask17action" value="Submit">
 		</cfform>
 		<cfif isDefined("form.SubmitTask17action")>
-			<cfinvoke component="CFTASKSCOMBINED.Components.cftask17component" method="colour" Arg1="#form.inputbox1#" returnVariable="res1">		
-			<cfdump var=#res1#>
+			<cfscript>
+				colObj=createObject("component","CFTASKSCOMBINED.Components.cftask17component");				
+	    	</cfscript>	
+			<cfset varcol=#colObj.colr(#form.inputbox1#)#>	
 			<cfoutput>
-				<span style="color:#res1#">
-					#form.inputbox1#
-				</span>
-			</cfoutput>
+				<span style="color:#varcol.color#">#varcol.text# #form.inputbox1#
+			</cfoutput>					    
 		</cfif>
 	</body>	
 </html>

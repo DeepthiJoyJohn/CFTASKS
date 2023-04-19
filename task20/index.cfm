@@ -10,7 +10,6 @@
 			<input type="text" name="email" required="YES">					
 			<input type="Submit" name="SubmitTask20action" value="Submit">
 		<form>
-		 		
 		<cfif isDefined("form.SubmitTask20action")>
 		    <cfscript>
 		    	captchObj=createObject("component","CFTASKSCOMBINED.Components.cftask20component");

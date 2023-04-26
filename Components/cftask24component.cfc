@@ -1,6 +1,6 @@
-<cfcomponent output="true">    
-    <cffunction name="dfg">
-        <cfset local.dfg="df">
-        <cfreturn local.dfg>
-    </cffunction>
+<cfcomponent output="true">  
+    <cffunction name="test" access="remote">    
+    <cfset local.dfg="df"> 
+    <cfoutput>#local.dfg#</cfoutput>
+    </cffunction>   
 </cfcomponent>

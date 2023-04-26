@@ -1,19 +1,14 @@
-<!--- Please insert your code here --->
-<cfform>
-     	<cfinput type="text" name="newPart" required="true" message="Please enter the Value"/>
-     	<cfinput type="Submit" name="ControlName" value="Submit">
-</cfform>
-<cfif isDefined("Form.newPart")>
-	<cfset variablename=#Form.newPart#>	
-	
-	<cfset a=ListToArray(variablename,',')>
-	
-	<cfloop from="1" to="#ArrayLen(a)#" index="i">
-		<cfif #a[i]#%3 eq 0> 
-		  <cfoutput>
-		 #a[i]#,
-		  </cfoutput>
-		  <cfcontinue>
-		 </cfif>
-	</cfloop>
-</cfif>
+<html>
+    <h3>TASK 3-BASED ON INPUT "3,8,9,11,12" SHOW NUMBERS DIVIDED BY 3
+</h3>
+	<form name="form" id="form" action="" method="post">
+		<label>Enter "3,8,9,11,12"</label>
+		<input type="text" name="newPart" value="3,8,9,11,12" required="true"/>
+		<input type="Submit" name="ControlName" value="Submit">
+	</form>
+	<cfif isDefined("form.ControlName")>
+		<cfinvoke component="CFTASKSCOMBINED.Components.cftask3component" method="checkinput" 
+		textname="#form.newPart#" returnVariable="res">
+		<cfoutput>#res#</cfoutput>		
+	</cfif>
+</html>

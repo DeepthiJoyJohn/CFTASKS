@@ -1,13 +1,13 @@
-<!--- Please insert your code here --->
-<cfform>
-     	<cfinput type="text" name="newPart" required="true" message="Please enter the Value"/>
-     	<cfinput type="Submit" name="ControlName" value="Submit">
-</cfform>
- <cfif isDefined("Form.newPart")>     
- 	<cfswitch expression=#Form.newPart#> 
-       <cfcase value="5">5 is very Good</cfcase>
-       <cfcase value="4">4 is Good</cfcase> 
-       <cfcase value="3">3 is Fair</cfcase>
-       <cfdefaultcase>OK</cfdefaultcase> 
-   </cfswitch>
-  </cfif>
+<html>
+    <h3>TASK 2-BASED ON INPUT SHOW RESULT USE CFCASE</h3>
+    <form name="form" id="form" action="" method="post">
+        <label>Enter No btw(1-5)</label>
+        <input type="text" name="newPart" required="true" message="Please enter the Value"/>
+        <input type="Submit" name="ControlName" value="Submit">
+    </form>
+    <cfif isDefined("Form.newPart")>
+        <cfinvoke component="CFTASKSCOMBINED.Components.cftask2component" method="checkinput" 
+        textname="#form.newPart#" returnVariable="res">
+        <cfoutput>#res#</cfoutput> 
+    </cfif>
+</html>

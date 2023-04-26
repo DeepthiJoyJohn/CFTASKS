@@ -5,13 +5,15 @@
 	<cfset this.sessionmanagement="yes"/>
 	<cfset cookie.VisitsCounter = "0" />
 	<cfset SESSION.HitCount ="0"/>
-<cffunction name="OnSessionStart" access="public" returntype="void" output="false" 
-                                         hint="Fires when user session initializes">
-
+  <cffunction name="OnSessionStart" access="public" returntype="void" 
+  output="false" hint="Fires when user session initializes">
        <cfset session.loggedin = "NO">
        <cfset session.username = "">
        <cfset session.userrights = "">
        <cfset session.usergroup = "">  
-
+       <cfset session.structtest=StructNew()>
+       <cfset session.structtestreplace=StructNew()>
+       <cfset session.structtestreplaceno=StructNew()>
+       <cfset session.abc=StructNew()>
   </cffunction>
 </cfcomponent>

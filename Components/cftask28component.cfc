@@ -33,7 +33,7 @@
     </cffunction>
     <cffunction name="deletepage" access="remote">                 
         <cfquery name="deletepage" datasource="cftask">
-			delete from page where id=#url.id#
+			delete from page where id=<cfqueryparam value="#url.id#" cfsqltype="CF_SQL_INTEGER">
 		</cfquery>
         <cflocation url="../task28/pages.cfm">
     </cffunction>
@@ -57,7 +57,7 @@
     <cffunction name="viewpageitem" access="public">
         <cfargument name="itemid">          
         <cfquery name="pagelist" datasource="cftask">
-            SELECT * from page where id=#arguments.itemid#
+            SELECT * from page where id=<cfqueryparam value="#arguments.itemid#" cfsqltype="CF_SQL_INTEGER">
         </cfquery> 
         <cfreturn pagelist>
     </cffunction>

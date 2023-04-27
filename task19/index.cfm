@@ -1,13 +1,11 @@
 <html>	
+	<h5>TASK-19-COOKIE INCREMENT</h5>
 	<body>
-		<cfform name="form" id="form" action="" method="post">
-			<p>TASK19_COOKIES</p>			
+		<form name="form" id="form" action="" method="post">						
 			<input type="Submit" name="SubmitTask19action" value="Submit">
-		</cfform>
+		</form>
 		<cfif isDefined("form.SubmitTask19action")>
-		    <cfscript>
-		    	cookieObj=createObject("component","CFTASKSCOMBINED.Components.cftask19component");
-			</cfscript>			
+		    <cfset cookieObj=createObject('component','CFTASKSCOMBINED.Components.cftask19component')>
 			<cfset cookie.VisitsCounter=cookieObj.incrcook()>			
 		    <cfoutput>#cookie.VisitsCounter#</cfoutput>
 		</cfif>

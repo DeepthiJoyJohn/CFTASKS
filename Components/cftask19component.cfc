@@ -1,7 +1,10 @@
 <cfcomponent output="false">
     <cffunction name="incrcook" access="public">
-        <cfset SESSION.HitCount=(SESSION.HitCount+1)>	        
-		<cfset local.var=#SESSION.HitCount#>
-        <cfreturn local.var>		
+        <cfif isDefined("SESSION.HitCount")>
+            <cfset SESSION.HitCount=(SESSION.HitCount+1)>
+        <cfelse>
+            <cfset SESSION.HitCount ="0"/>
+        </cfif>	
+        <cfreturn SESSION.HitCount>	
 	</cffunction>
 </cfcomponent>

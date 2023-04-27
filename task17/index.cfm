@@ -1,18 +1,6 @@
 <html>
 	<head>
-		<title>JavaScript Validation</title>
-		<script>
-			function testbox(form, ctrl, value) {
-				if (isNaN(value)) 
-				{
-					return (false);
-				} 
-				else
-				{
-					return (true);
-				} 
-			}
-        </script>
+		<script src="../js/cftask17.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<cfform name="form" id="form" action="" method="post">
@@ -23,9 +11,7 @@
 			<input type="Submit" name="SubmitTask17action" value="Submit">
 		</cfform>
 		<cfif isDefined("form.SubmitTask17action")>
-			<cfscript>
-				colObj=createObject("component","CFTASKSCOMBINED.Components.cftask17component");				
-	    	</cfscript>	
+			<cfset colObj=createObject('component','CFTASKSCOMBINED.Components.cftask17component')>
 			<cfset varcol=#colObj.colr(#form.inputbox1#)#>	
 			<cfoutput>
 				<span style="color:#varcol.color#">#varcol.text# #form.inputbox1#

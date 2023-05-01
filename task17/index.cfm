@@ -12,7 +12,7 @@
 		</cfform>
 		<cfif isDefined("form.SubmitTask17action")>
 			<cfset colObj=createObject('component','CFTASKSCOMBINED.Components.cftask17component')>
-			<cfset varcol=#colObj.colr(#form.inputbox1#)#>	
+			<cfset varcol=#colObj.colr(form.inputbox1)#>	
 			<cfoutput>
 				<span style="color:#varcol.color#">#varcol.text# #form.inputbox1#
 			</cfoutput>					    

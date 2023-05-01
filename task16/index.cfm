@@ -3,7 +3,7 @@
 <cfscript>
 	patternObj=createObject("component","CFTASKSCOMBINED.Components.cftask16component"); 
 </cfscript>
-<cfset structvar=#patternObj.pattern()#/>
+<cfset structvar=patternObj.pattern()/>
 <cfoutput>				
 	#structvar[1]#<br><br>
 	#structvar[2]#<br><br>

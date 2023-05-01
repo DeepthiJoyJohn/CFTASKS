@@ -6,7 +6,7 @@
         <cfset arrayAppend( local.returnData,local.personStruct )>
         <cfset local.personStruct = {"Name":"Ram","Age":26,"LOCATION":"Kovilpatti"}>
         <cfset arrayAppend( local.returnData,local.personStruct )>
-        <cfset j = serializeJSON(local.returnData)>
-        <cfreturn j>
+        <cfset local.j = serializeJSON(local.returnData)>
+        <cfreturn local.j>
     </cffunction>
 </cfcomponent>

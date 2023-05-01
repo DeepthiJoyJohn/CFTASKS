@@ -14,7 +14,7 @@
 		    <cfscript>
 		    	captchObj=createObject("component","CFTASKSCOMBINED.Components.cftask20component");
 			</cfscript>	
-			<cfset res=captchObj.checkcaptcha(#form.captcha#,#form.email#)><br><br>			
+			<cfset res=captchObj.checkcaptcha(form.captcha,form.email)><br><br>			
 			<cfoutput><b>#res#</b></cfoutput>
 		</cfif>
 	</body>	

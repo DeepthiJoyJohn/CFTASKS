@@ -1,0 +1,50 @@
+hr {
+	border: none;
+	border-top: 2px dotted black;
+  }
+  span.red {
+	color:red;	 
+  }
+  span.position {
+	background-color:Moccasin;	
+	font-weight: 900; 
+  }
+  span.class2 {
+	margin-left:9%; 
+  }
+  span.class3 {
+	margin-left:12%
+  }
+  span.class4 {
+	margin-left:3%
+  }
+  span.class5 {
+	margin-left:3.5%
+  }
+  p.thicker {
+	font-weight: 900;
+  }
+  input.small {
+	width:25%;
+  }
+  input.toosmall {
+	width:10%;
+  }
+  input.little {
+	width:5%;
+  }
+  input.phone1 {
+	width:3%;
+  }
+  input.phone2 {
+	width:4%;
+  }
+  h6.class1 {
+	margin-left:2%;
+	margin-top:1%
+  }
+  h6.class2 {
+	margin-left:0.5%;
+	margin-top:1%
+  }
+  

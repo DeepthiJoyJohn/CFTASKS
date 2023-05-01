@@ -10,12 +10,16 @@
 	<cfif isDefined("Form.submitactiontask25")>
 		<cfinvoke component="CFTASKSCOMBINED.Components.tagCloud" method="init" textc="#form.textarea#" 
 		returnVariable="res">
-		<cfinvoke component="CFTASKSCOMBINED.Components.tagCloud" method="retrievedata" textd="#form.textarea#" 
-		returnVariable="sorted">
-		<cfloop collection="#sorted#" item="key" >
-			<cfoutput> 
-				#key#(#sorted[key]#)<br><br>
-			</cfoutput>
+		<p>Constructor returning a Sructure</p>
+		<cfdump var=#res#><br>
+		<cfinvoke component="CFTASKSCOMBINED.Components.tagCloud" method="retrievedatatest" returnVariable="sorted">
+		<cfset colors = ArrayNew(1)>
+		<cfset colors[1] = "red">
+		<cfset colors[2] = "blue">
+		<cfset colors[3] = "green">
+		<cfset colors[4] = "orange">
+		<cfloop query="sorted">
+		   <cfoutput><font style="color:#colors['#sorted.count#']#;font-size:#sorted.count#0px">#sorted.word#(#sorted.count#)<br></font></cfoutput>
 		</cfloop>
 	</cfif>
 </html>

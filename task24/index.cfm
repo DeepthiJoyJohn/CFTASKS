@@ -17,7 +17,9 @@
 		<cfif isDefined("Form.submitactiontask24")>
 			<cfinvoke component="CFTASKSCOMBINED.Components.cftask24component" method="adddata" 
 			firstname="#form.firstname#" emailaddress="#form.emailaddress#" returnVariable="res">
-			<cfoutput>#res#</cfoutput>
+			<cfif res.RecordCount GTE 1>
+			  <cfoutput>Record Added Successfully</cfoutput>
+			</cfif>
 		</cfif>
 		
 	</body>	

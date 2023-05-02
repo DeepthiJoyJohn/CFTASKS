@@ -2,7 +2,8 @@
     <cffunction name="init" access="public" output="false" hint="constructor">
         <cfargument name="textc">
         <cfset local.strData = "#arguments.textc#" />
-        <cfset local.strData=replaceList("#local.strData#","."," ")>            
+        <cfset local.strData=replaceList("#local.strData#",";,&,<,>,`,',!,@,$,%,(,),=,+,{,},[,],\,.,"," ")>  
+        
 		<cfset local.arrData = ListToArray(local.strData," ") />
         <cfquery name="delete" datasource="cftask"> 
             delete from tags

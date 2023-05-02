@@ -1,4 +1,7 @@
-<html>		
+<html>
+	<head>	
+  		<link rel="stylesheet" href="../css/cftask25.css">
+	</head>		
 	<body>
 		<form name="form" id="form" enctype="multipart/form-data" action="" method="post">
 			<p><b>TASK26_READING TEXT DATA FROM TEXT FILE</b></p>
@@ -16,7 +19,7 @@
 		<cfset colors[3] = "green">
 		<cfset colors[4] = "orange">
 		<cfloop query="res">
-		   <cfoutput><font style="color:#colors['#res.count#']#;font-size:#res.count#0px">#res.word#(#res.count#)<br></font></cfoutput>
+		   <cfoutput><p class="class#res.count#">#res.word#(#res.count#)<br></p></cfoutput>
 		</cfloop>
 		
 	</cfif>

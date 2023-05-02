@@ -3,7 +3,7 @@
 </h3>
 	<form name="form" id="form" action="" method="post">
 		<label>Enter "3,8,9,11,12"</label>
-		<input type="text" name="newPart" value="3,8,9,11,12" required="true"/>
+		<input type="text" name="newPart" value="" required="true"/>
 		<input type="Submit" name="ControlName" value="Submit">
 	</form>
 	<cfif isDefined("form.ControlName")>

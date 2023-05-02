@@ -5,7 +5,7 @@
         <cfset local.strData=replaceList("#local.strData#",";,&,<,>,`,',!,@,$,%,(,),=,+,{,},[,],\,.,"," ")>  
         
 		<cfset local.arrData = ListToArray(local.strData," ") />
-        <cfquery name="delete" datasource="cftask"> 
+        <cfquery name="local.delete" datasource="cftask"> 
             delete from tags
         </cfquery>
         <cfset local.words=structnew()> 
@@ -15,7 +15,7 @@
                 <cfif NOT StructKeyExists(local.words, "#local.arrData[i]#")> 
                     <cfset local.occurrences = listValueCount("#local.strData#", "#local.arrData[i]#", " ")>
                     <cfset structInsert(local.words,"#local.arrData[i]#",#local.occurrences#)>    
-                    <cfquery name="AddWords" datasource="cftask"> 
+                    <cfquery name="local.AddWords" datasource="cftask"> 
                         INSERT INTO tags (word,count) VALUES (<cfqueryparam value="#local.arrData[i]#" cfsqltype="CF_SQL_VARCHAR">,
                         <cfqueryparam value="#local.occurrences#" cfsqltype="CF_SQL_INTEGER">) 
                     </cfquery>

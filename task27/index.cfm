@@ -12,7 +12,6 @@
 	<cfif isDefined("Form.submitactiontask27")>
 		<cfinvoke component="CFTASKSCOMBINED.Components.cftask27component" username1="#form.username#" 
 		password1="#form.password#" method="logincheck" returnVariable="res">
-		<cfoutput>#res#</cfoutput>
 		<cfif #res# eq "login Success">
 			<cflock timeout=20 scope="Session" type="Exclusive">
 				<cfset Session.log = "#form.username#">

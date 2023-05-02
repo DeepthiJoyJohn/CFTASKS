@@ -7,7 +7,7 @@
             nameconflict="makeunique">
             <cfset local.filename="#cffile.serverdirectory#/#cffile.serverfile#">            
         </cfif> 
-        <cfquery name="getlastid" datasource="cftask">
+        <cfquery name="local.getlastid" datasource="cftask">
 			SELECT CASE WHEN MAX(id) IS NULL THEN 1 ELSE MAX(id)+1 END AS id FROM cftask23
 		</cfquery>   
         <cfset local.radiovalue="">     
@@ -25,7 +25,7 @@
         <cfif isDefined("Form.cents")AND ("#Form.cents#") NEQ "">
             <cfset local.sal="#local.sal#.#Form.cents#">
         </cfif>
-		<cfquery name="AddEmployee" datasource="cftask"> 
+		<cfquery name="local.AddEmployee" datasource="cftask"> 
             INSERT INTO cftask23 VALUES  (<cfqueryparam value="#getlastid.id#" cfsqltype="CF_SQL_INTEGER">,
             <cfqueryparam value="#form.position#" cfsqltype="CF_SQL_VARCHAR">,
             <cfqueryparam value="#local.radiovalue#" cfsqltype="CF_SQL_VARCHAR">,

@@ -12,12 +12,7 @@
 	</body>	
 	<cfif isDefined("Form.submitactiontask26")>
 		<cfinvoke component="CFTASKSCOMBINED.Components.cftask26component" filename="fileUpload" method="readdata" 
-		 returnVariable="res">
-		<cfset colors = ArrayNew(1)>
-		<cfset colors[1] = "red">
-		<cfset colors[2] = "blue">
-		<cfset colors[3] = "green">
-		<cfset colors[4] = "orange">
+		 returnVariable="res">		
 		<cfloop query="res">
 		   <cfoutput><p class="class#res.count#">#res.word#(#res.count#)<br></p></cfoutput>
 		</cfloop>

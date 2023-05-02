@@ -1,0 +1,11 @@
+table {
+  border: 1px solid;
+}
+th {
+  width:200px;
+  border: 1px solid;
+}
+input {
+  width:200px;
+  border: 1px solid;
+}
